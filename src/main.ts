@@ -28,7 +28,7 @@ const renderTodo = (todos: TODO[]): void => {
   todos.forEach((todo,i) => {
     const deleteButton = document.createElement("button") as HTMLButtonElement;
     deleteButton.innerText = "DELETE";
-    deleteButton.onclick = (e: Event) => {
+    deleteButton.onclick = () => {
       if (todo.isChecked) {
         deleteTodo(todo.id);
       }
@@ -39,7 +39,7 @@ const renderTodo = (todos: TODO[]): void => {
       checkButton.checked = true;
     }
     checkButton.className = "check-box";
-    checkButton.onchange = (e: Event) => {
+    checkButton.onchange = () => {
       todo.isChecked = checkButton.checked;
       console.log(todos);
     };
